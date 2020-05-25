@@ -5,4 +5,4 @@
     - name: copy file
       copy:
         src: /tmp/foo.conf
-        dest: /etc/foo.conf
+        dest: /tmp/foo.conf
