@@ -14,6 +14,7 @@
       - name: update repos
         apt:
           update_cache: yes
+          
       - name: install all required dependencies
         apt: name={{ pkgs }} update_cache=yes state=latest
       
