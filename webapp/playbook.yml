@@ -1,13 +1,6 @@
 - 
     name: update repositories
     hosts: all_nodes
-    tasks:
-      - name: update repos
-        apt:
-          update_cache: yes
--
-    name: Deploy a web application
-    hosts: web1
     vars:
       pkgs:
         - python
@@ -16,11 +9,18 @@
         - build-essential
         - python-pip
         - python-mysqldb
-      
+    
     tasks:
+      - name: update repos
+        apt:
+          update_cache: yes
       - name: install all required dependencies
         apt: name={{ pkgs }} update_cache=yes state=latest
-
+      
+-
+    name: Deploy a web application
+    hosts: web1   
+    tasks:
       - name: Install python flask dependency
         pip:
           name: "{{ item }}"
