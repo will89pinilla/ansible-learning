@@ -1,22 +1,29 @@
 -
+    name: update repositories
+    hosts: all_nodes
+    tasks:
+      - name: Run the equivalent of "apt-get update" as a separate step
+        apt:
+        update_cache: yes
+-
     name: Deploy a web application
     hosts: web1
     tasks:
-    - name: install all required dependencies
-      apt: name="{{ item }}" state=installed update_cache=yes      
-      with_items:
+      - name: install all required dependencies
+        apt: 
+          apk:
             - python
             - python-setuptools
             - python-dev
             - build-essential
             - python-pip
-            - python-mysqldb     
+            - python-mysqldb            
 
-    - name: Install python flask dependency
-      pip:
-        name: "{{ item }}"
-        state: present
-        with_items:
+      - name: Install python flask dependency
+        pip:
+          name: "{{ item }}"
+          state: present
+          with_items:
           - flask
           - flask-mysql
 -
