@@ -1,8 +1,12 @@
 
-[webapp]
 web1 ansible_host=172.17.0.3 ansible_ssh_pass=Passw0rd
-[db] 
 db1 ansible_host=172.17.0.4 ansible_ssh_pass=Passw0rd
+
+[webapp]
+web1
+
+[db] 
+db1
 
 [whole_env:children]
 web1
