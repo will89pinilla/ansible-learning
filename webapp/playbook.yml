@@ -1,0 +1,6 @@
+-
+  name: ping env
+  hosts: whole_env
+  tasks:
+    - name: ping
+      ping:
