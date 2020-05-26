@@ -46,7 +46,9 @@
           enabled: yes
 
       - name: Create Application Database
-        mysql_db: name=employed_db state=present
+        mysql_db:
+          name: employed_db
+          state: present         
 
       - name: Create Database user
         mysql_user:
