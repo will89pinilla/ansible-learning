@@ -8,16 +8,18 @@
 -
     name: Deploy a web application
     hosts: web1
-    tasks:
-      - name: install all required dependencies
-        apt: 
-          apk:
+    vars:
+      pkgs:
             - python
             - python-setuptools
             - python-dev
             - build-essential
             - python-pip
-            - python-mysqldb            
+            - python-mysqldb
+
+    tasks:
+      - name: install all required dependencies
+        apt: name={{ pkgs }} state=installed           
 
       - name: Install python flask dependency
         pip:
