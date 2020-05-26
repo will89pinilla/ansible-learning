@@ -1,6 +1,6 @@
 -
   name: ping env
-  hosts: whole_env
+  hosts: all_nodes
   tasks:
     - name: ping
       ping:
