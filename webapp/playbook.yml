@@ -44,7 +44,7 @@
         service:
           name: mysql
           state: started
-          enabled: yes
+          enabled: true
 
       - name: Create Application Database
         mysql_db:
@@ -66,4 +66,4 @@
         copy: src=app.py dest=/opt/app.py
 
       - name: start web server
-        shell: FLASK_APP=/opt/app.py nohoup flask run --host=0.0.0.0 &
+        shell: FLASK_APP=/opt/app.py && flask run --host=0.0.0.0 &
