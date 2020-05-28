@@ -1,0 +1,15 @@
+-
+    name: Install server packages
+    hosts: all_nodes
+    roles:
+      - python
+-
+    name: Install Mysql Database
+    hosts: db_nodes
+    roles:
+      - mysql_db
+-
+    name: Install and Deploy webApp
+    hosts: webapp_nodes
+    roles:
+      - flask_web 
