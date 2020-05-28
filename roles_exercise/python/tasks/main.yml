@@ -4,4 +4,6 @@
       update_cache: yes
 
   - name: Install dependencies
-    apt: name = ['python', 'python-setuptools', 'python-dev', 'build-essential', 'python-pip', 'python-mysqldb']  state=present
+    apt: 
+      name: ['python', 'python-setuptools', 'python-dev', 'build-essential', 'python-pip', 'python-mysqldb']
+      state: present
