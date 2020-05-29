@@ -8,6 +8,3 @@
       name: ['python', 'python-setuptools', 'python-dev', 'build-essential', 'python-pip', 'python-mysqldb']
       state: present
   
-  - name: Install MySQL database
-    apt:
-      name: 'pymysql'

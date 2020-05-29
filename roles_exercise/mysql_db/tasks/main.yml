@@ -1,6 +1,12 @@
   - name: Install MySQL database
     apt:
       name: ['mysql-server', 'mysql-client']
+  
+  - name: Make sure pymysql is present
+    become: true
+    pip:
+      name: pymysql
+      state: present
 
   - name: Start Mysql Service
     service:
