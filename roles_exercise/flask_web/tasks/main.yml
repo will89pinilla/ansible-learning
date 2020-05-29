@@ -1,10 +1,7 @@
   - name: Install python flask dependency
     pip:
-      name: "{{ item }}"
-      state: present
-    with_items:
-        - flask
-        - flask-mysql
+      name: ['flask', 'flask-mysql']
+      state: present    
         
   - name: copy source code
     copy: src=app.py dest=/opt/app.py

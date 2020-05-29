@@ -1,6 +1,6 @@
 
-web1 ansible_host=172.17.0.3 ansible_ssh_pass=Passw0rd
-dbe1 ansible_host=172.17.0.4 ansible_ssh_pass=Passw0rd
+web1 ansible_host=172.17.0.3 ansible_ssh_pass=Passw0rd ansible_python_interpreter=/usr/bin/python3
+dbe1 ansible_host=172.17.0.4 ansible_ssh_pass=Passw0rd ansible_python_interpreter=/usr/bin/python3
 
 [webapp_nodes]
 web1
